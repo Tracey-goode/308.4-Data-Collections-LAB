@@ -122,3 +122,44 @@
 ////////Couldnt figure this out!!!!!///////////
 
 /////////////////Part 4////////////////
+
+// const csvData = [
+//   [ 'ID', 'Name', 'Occupation', 'Age' ],
+//   [ '42', 'Bruce', 'Knight', '41' ],
+//   [ '57', 'Bob', 'Fry Cook', '19' ],
+//   [ '63', 'Blaine', 'Quiz Master', '58' ],
+//   [ '98', 'Bill', "Doctor's Assistant", '26' ]
+// ]
+
+// const header = csvData[0]
+// const rows = csvData.slice(1)
+
+// const objectArray = rows.map(row => {
+//     const obj = {};
+//     for(let i = 0; i < header.length; i++) {
+//         obj[header[i]] = row[i]
+//     } 
+//     return obj;
+    
+// })
+    
+// console.log(objectArray)
+
+// objectArray.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" })
+// objectArray.splice(1, 0, { id: "48", name: "Barry", occupation: "Runner", age: "25" } )
+
+// console.log(objectArray)
+
+// [
+//   { ID: '42', Name: 'Bruce', Occupation: 'Knight', Age: '41' },
+//   { id: '48', name: 'Barry', occupation: 'Runner', age: '25' },
+//   { ID: '57', Name: 'Bob', Occupation: 'Fry Cook', Age: '19' },
+//   { ID: '63', Name: 'Blaine', Occupation: 'Quiz Master', Age: '58' },
+//   {
+//     ID: '98',
+//     Name: 'Bill',
+//     Occupation: "Doctor's Assistant",
+//     Age: '26'
+//   },
+//   { id: '7', name: 'Bilbo', occupation: 'None', age: '111' }
+]
