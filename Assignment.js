@@ -45,32 +45,80 @@
 // Instead of hardcoding four columns per row, expand your code to accept any number of columns.
 
 
-const csvData = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor's Assistant,26"
+// const csvData = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor's Assistant,26"
 
-const rows = csvData.split('\n')
+// const rows = csvData.split('\n')
 
-const headers = rows[0].split(',');
-const numColumns = headers.length;
+// const headers = rows[0].split(',');
+// const numColumns = headers.length;
 
-const data = []
+// const data = []
 
-for( let row of rows){
-    const cells = [];
-    let currentCell = '';
-    let commaCount = 0;
+// for( let row of rows){
+//     const cells = [];
+//     let currentCell = '';
+//     let commaCount = 0;
 
-    for (let i = 0; i < row.length; i++){
-        const char= row[i];
-        if (char === ','){
-            cells.push(currentCell);
-            currentCell = '';
-            commaCount++;
-        } else{
-            currentCell += char;
-        }
-    }
-    cells.push(currentCell);
+//     for (let i = 0; i < row.length; i++){
+//         const char= row[i];
+//         if (char === ','){
+//             cells.push(currentCell);
+//             currentCell = '';
+//             commaCount++;
+//         } else{
+//             currentCell += char;
+//         }
+//     }
+//     cells.push(currentCell);
 
-    data.push(cells)
-}
-console.log(data)
+//     data.push(cells)
+// }
+// console.log(data)
+
+// [
+//   [ 'ID', 'Name', 'Occupation', 'Age' ],
+//   [ '42', 'Bruce', 'Knight', '41' ],
+//   [ '57', 'Bob', 'Fry Cook', '19' ],
+//   [ '63', 'Blaine', 'Quiz Master', '58' ],
+//   [ '98', 'Bill', "Doctor's Assistant", '26' ]
+// ]
+
+
+//////////////////PART3//////////////////////////////
+
+// const csvData = [
+//   [ 'ID', 'Name', 'Occupation', 'Age' ],
+//   [ '42', 'Bruce', 'Knight', '41' ],
+//   [ '57', 'Bob', 'Fry Cook', '19' ],
+//   [ '63', 'Blaine', 'Quiz Master', '58' ],
+//   [ '98', 'Bill', "Doctor's Assistant", '26' ]
+// ]
+
+// const header = csvData[0]
+// const rows = csvData.slice(1)
+
+// const objectArray = rows.map(row => {
+//     const obj = {};
+//     for(let i = 0; i < header.length; i++) {
+//         obj[header[i]] = row[i]
+        
+//     } 
+//     return obj;
+// })
+// console.log(objectArray)
+
+// [
+//   { ID: '42', Name: 'Bruce', Occupation: 'Knight', Age: '41' },
+//   { ID: '57', Name: 'Bob', Occupation: 'Fry Cook', Age: '19' },
+//   { ID: '63', Name: 'Blaine', Occupation: 'Quiz Master', Age: '58' },
+//   {
+//     ID: '98',
+//     Name: 'Bill',
+//     Occupation: "Doctor's Assistant",
+//     Age: '26'
+//   }
+// ]
+
+////////Couldnt figure this out!!!!!///////////
+
+/////////////////Part 4////////////////
