@@ -20,7 +20,7 @@
 //     if(csvData[i] ==","){
 //     }else if(csvData[i]=='\n'){
 //         console.log(cell1, cell2, cell3, cell4)
-        
+
 //         cell1 = cell2 = cell3 = cell4 = ""
 //         commas = 0
 
@@ -101,7 +101,7 @@
 //     const obj = {};
 //     for(let i = 0; i < header.length; i++) {
 //         obj[header[i]] = row[i]
-        
+
 //     } 
 //     return obj;
 // })
@@ -137,12 +137,12 @@
 // const objectArray = rows.map(row => {
 //     const obj = {};
 //     for(let i = 0; i < header.length; i++) {
-//         obj[header[i]] = row[i]
+//         obj[header[i].toLowerCase()] = row[i].toLowerCase();
 //     } 
 //     return obj;
-    
+
 // })
-    
+
 // console.log(objectArray)
 
 // objectArray.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" })
@@ -162,4 +162,45 @@
 //     Age: '26'
 //   },
 //   { id: '7', name: 'Bilbo', occupation: 'None', age: '111' }
+// ]
+
+
+/////////////////////PART 5/////////////////////////////////
+
+
+const objData = [
+    { ID: '42', Name: 'Bruce', Occupation: 'Knight', Age: '41' },
+    { id: '48', name: 'Barry', occupation: 'Runner', age: '25' },
+    { ID: '57', Name: 'Bob', Occupation: 'Fry Cook', Age: '19' },
+    { ID: '63', Name: 'Blaine', Occupation: 'Quiz Master', Age: '58' },
+    { ID: '98', Name: 'Bill', Occupation: "Doctor's Assistant", Age: '26' },
+    { id: '7', name: 'Bilbo', occupation: 'None', age: '111' }
 ]
+const header = ['ID', 'Name', 'Occupation', 'Age'];
+
+const csvData = [header];
+
+for(let obj of objData) {
+    const row = [];
+    for (let x = 0; x < header.length; x++) {
+        const key = header[x];
+        const lowerKey = key.toLowerCase();
+        row.push(obj[key] || obj[lowerKey] || '');
+    }
+    csvData.push(row)
+
+};
+const csvString = csvData
+    .map(row => row.map(cell => `"${cell}"`).join(','))
+    .join('\n');
+
+console.log(csvString)
+
+// "ID","Name","Occupation","Age"
+// "42","Bruce","Knight","41"
+// "48","Barry","Runner","25"
+// "57","Bob","Fry Cook","19"
+// "63","Blaine","Quiz Master","58"
+// "98","Bill","Doctor's Assistant","26"
+// "7","Bilbo","None","111"
+
